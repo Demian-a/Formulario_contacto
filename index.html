@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Contacto Avanzado</title>
+</head>
+<body>
+  <h1>Contacto</h1>
+
+  <form action="/enviar" method="post" enctype="multipart/form-data">
+    <!-- Información personal -->
+    <fieldset>
+      <legend>Información Personal</legend>
+
+      <label for="nombre">Nombre completo:</label><br>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required minlength="3" maxlength="60"><br><br>
+
+      <label for="email">Correo electrónico:</label><br>
+      <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required><br><br>
+
+      <label for="telefono">Teléfono:</label><br>
+      <input type="tel" id="telefono" name="telefono" placeholder="+51 999999999" pattern="^\+?\d{7,15}$"><br><br>
+    </fieldset>
+    <br>
+
+    <!-- Asunto y mensaje -->
+    <fieldset>
+      <legend>Mensaje</legend>
+
+      <label for="asunto">Asunto:</label><br>
+      <input type="text" id="asunto" name="asunto" required maxlength="100"><br><br>
+
+      <label for="mensaje">Mensaje:</label><br>
+      <textarea id="mensaje" name="mensaje" rows="6" cols="40" placeholder="Escribe tu mensaje..." required></textarea><br><br>
+    </fieldset>
+    <br>
+
+    <!-- Opciones adicionales -->
+    <fieldset>
+      <legend>Preferencias</legend>
+
+      <label for="contacto">¿Cómo prefieres ser contactado?</label><br>
+      <select id="contacto" name="contacto" required>
+        <option value="">Seleccione...</option>
+        <option value="email">Correo electrónico</option>
+        <option value="telefono">Teléfono</option>
+        <option value="whatsapp">WhatsApp</option>
+      </select><br><br>
+
+      <label>Disponibilidad horaria:</label><br>
+      <input type="radio" id="manana" name="horario" value="mañana" required>
+      <label for="manana">Mañana</label><br>
+      <input type="radio" id="tarde" name="horario" value="tarde">
+      <label for="tarde">Tarde</label><br>
+      <input type="radio" id="noche" name="horario" value="noche">
+      <label for="noche">Noche</label><br><br>
+
+      <label for="archivo">Adjuntar archivo (opcional):</label><br>
+      <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.png"><br><br>
+    </fieldset>
+    <br>
+
+    <!-- Confirmación -->
+    <fieldset>
+      <legend>Confirmación</legend>
+      <input type="checkbox" id="terminos" name="terminos" required>
+      <label for="terminos">Acepto los términos y condiciones</label><br><br>
+    </fieldset>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpiar</button>
+  </form>
+</body>
+</html>
